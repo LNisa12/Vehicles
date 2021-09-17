@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using Vehicles.Common.Enums;
 
@@ -43,5 +44,7 @@ namespace Vehicles.API.Data.Entities
 
         [Display(Name = "Usuario")]
         public string FullName => $"{FirstName} {LastName}";
+        public ICollection<Vehicle> Vehicles { get; set; }
+        
     }
 }
