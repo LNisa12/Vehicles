@@ -36,15 +36,18 @@ namespace Vehicles.API.Data.Entities
 
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
-           ? $"https://localhost:5001/images/noimage.png"
-           : $"https://vehicleszulu.blob.core.windows.net/users/{ImageId}";
+            ? $"https://vehiclesnancy.azurewebsites.net/images/noimage.png"
+            : $"https://vehiclesnancy.blob.core.windows.net/users/{ImageId}";
 
         [Display(Name = "Tipo de usuario")]
         public UserType UserType { get; set; }
 
         [Display(Name = "Usuario")]
         public string FullName => $"{FirstName} {LastName}";
+
         public ICollection<Vehicle> Vehicles { get; set; }
-        
+
+        [Display(Name = "# Vehículos")]
+        public int VehiclesCount => Vehicles == null ? 0 : Vehicles.Count;
     }
 }
