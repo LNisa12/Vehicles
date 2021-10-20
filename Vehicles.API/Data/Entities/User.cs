@@ -36,7 +36,7 @@ namespace Vehicles.API.Data.Entities
 
         [Display(Name = "Foto")]
         public string ImageFullPath => ImageId == Guid.Empty
-            ? $"https://vehiclesnancy.azurewebsites.net/images/noimage.png"
+            ? $"https://localhost:44354/images/noimage.png"
             : $"https://vehiclesnancy.blob.core.windows.net/users/{ImageId}";
 
         [Display(Name = "Tipo de usuario")]
